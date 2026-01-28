@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $pageTitle; ?></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="projects.php">Projets</a></li>
+                </ul>
+            </nav>
+        </header>
+
+<main>
+    <h1>Mes Projets</h1>
+
+    <div class="projects-tabs">
+        <button type="button" class="tab active" data-project="inondations">
+            🌊 Inondations
+        </button>
+        <button type="button" class="tab" data-project="lidar">
+            🟢 LiDAR HD
+        </button>
+        <button type="button" class="tab" data-project="segmentation">
+            🧠 Segmentation IA
+        </button>
+        <button type="button" class="tab" data-project="sig">
+            🗺️ Analyse spatiale
+        </button>
+        <button type="button" class="tab" data-project="ndwi">
+            💧 Détection de l'eau
+        </button>
+    </div>
+
+    <section class="project active" id="project-inondations">
+        <h2>Approche de détection automatique pour la délimitation des zones inondables canadiennes</h2>
+
+        <figure>
+            <img src="images/inondations/pres.jpg" alt="Exemple d'inondation" class="project-image">
+            <figcaption>Exemple d'inondation en zone urbaine.</figcaption>
+        </figure>
+
+        <h3>Contexte</h3>
+        <p>
+            Les inondations font partie des catastrophes naturelles les plus fréquentes et destructrices au Canada.
+            Ce projet, réalisé à l'INRS (Institut National de la Recherche Scientifique) au sein du laboratoire TENOR,
+            vise à développer une approche automatique pour la détection des zones inondables en utilisant des images satellites.
+        </p>
+
+        <h3>Objectifs</h3>
+        <p>
+            L'objectif principal est de développer un modèle de deep learning capable de détecter les zones inondées à partir d'images Sentinel-2.
+            Le modèle doit être capable de distinguer les zones d'eau, de nuages, et de sol pour fournir des cartes précises des inondations.
+        </p>
+
+        <h3>Méthodologie</h3>
+        <p>
+            <strong>Prétraitement des données :</strong>
+            <ul>
+                <li>Transformation des images Sentinel-2 en pseudo-Landsat pour une meilleure compatibilité avec les données historiques.</li>
+                <li>Réduction de la résolution des images de 10m à 30m.</li>
+                <li>Création de vecteurs d'entrée pour chaque pixel en utilisant les valeurs de réflectance.</li>
+            </ul>
+        </p>
+
+        <p>
+            <strong>Modèle de Deep Learning :</strong>
+            <ul>
+                <li>Utilisation d'un réseau de neurones convolutif (CNN) pour la segmentation sémantique.</li>
+                <li>Architecture du modèle : couches de convolution, de pooling, et couches denses.</li>
+                <li>Optimisation du modèle avec des techniques de régularisation (L1, L2) et de pondération des classes.</li>
+            </ul>
+        </p>
+
+        <figure>
+            <img src="images/inondations/orga.png" alt="Organigramme du projet" class="project-image" style="width: 70%; height: auto; margin: 20px auto;">
+            <figcaption>Organigramme du projet de détection des inondations.</figcaption>
+        </figure>
+
+        <h3>Résultats</h3>
+        <p>
+            <strong>Détection des nuages :</strong>
+            <ul>
+                <li>Précision de 99% sur les données de calibration.</li>
+                <li>Amélioration de la généralisation du modèle avec des techniques de régularisation.</li>
+                <li>Utilisation d'un filtre modal pour réduire les erreurs de surestimation des nuages.</li>
+            </ul>
+        </p>
+
+        <div class="side-by-side-images">
+            <div class="side-image">
+                <figure>
+                    <img src="images/inondations/mat1.png" alt="Matrice de confusion pour la détection des nuages" class="project-image">
+                    <figcaption>Matrice de confusion pour la détection des nuages (jeu d'entrainement).</figcaption>
+                </figure>
+            </div>
+            <div class="side-image">
+                <figure>
+                    <img src="images/inondations/mat2.png" alt="Matrice de confusion pour la détection des nuages" class="project-image">
+                    <figcaption>Matrice de confusion pour la détection des nuages (jeu de validation).</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <p>
+            <strong>Détection de l'eau :</strong>
+            <ul>
+                <li>Précision de 96% sur les données de calibration.</li>
+                <li>Utilisation des prédictions des nuages pour améliorer la détection de l'eau.</li>
+            </ul>
+        </p>
+
+        <figure>
+            <img src="images/inondations/graphe.png" alt="Graphique de précision et perte" class="project-image">
+            <figcaption>Graphique de précision et de perte lors de l'entraînement du modèle.</figcaption>
+        </figure>
+
+        <h3>Conclusion</h3>
+        <p>
+            Ce projet a permis de développer un modèle de deep learning efficace pour la détection des zones inondables.
+            Les résultats montrent une bonne précision et une capacité à généraliser sur de nouvelles données.
+            Des améliorations futures pourraient inclure l'analyse fréquentielle pour ajouter une dimension temporelle aux prédictions.
+        </p>
+
+        <div class="project-skills">
+            <h3>Compétences mobilisées</h3>
+            <ul>
+                <li>Traitement d'images satellites</li>
+                <li>Deep Learning</li>
+                <li>Segmentation sémantique</li>
+                <li>CNN</li>
+                <li>Python</li>
+                <li>TensorFlow/Keras</li>
+                <li>QGIS</li>
+                <li>Prétraitement des données</li>
+                <li>Optimisation des modèles</li>
+                <li>Visualisation des résultats</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="project" id="project-lidar">
+        <h2>Qualification de la classification LIDAR HD</h2>
+
+        <p class="project-context">
+            Ce travail, réalisé au sein du service SV3D de l’IGN, vise à répondre à une question
+            simple mais cruciale : comment mesurer et automatiser l’évaluation de la qualité de la
+            classification des nuages de points LiDAR HD ? Alors que les caractéristiques
+            géométriques (position, altitude) des dalles sont contrôlées, la composante sémantique,
+            c’est-à-dire savoir si un point est correctement étiqueté en « sol », « bâti »,
+            «végétation», etc… n’est pas quantifiée à grande échelle.
+        </p>
+
+        <figure>
+            <img src="images/lidar/nuage_lidar.png" alt="Exemple d’un nuage de points Lidar HD en zone urbaine" class="project-image">
+            <figcaption>Exemple d’un nuage de points LiDAR HD en zone urbaine.</figcaption>
+        </figure>
+
+        <h3>Méthodologie</h3>
+        <ol>
+            <li>Création manuelle de vérités-terrain en corrigeant la classification de dalles kilométriques pour disposer de références fiables.</li>
+            <li>Développement d’un score structurel calculé uniquement à partir de la géométrie et de la répartition des classes (homogénéité, cohérence locale, points isolés) pour repérer automatiquement les cellules suspectes.</li>
+            <li>Entraînement de modèles de deep learning (architecture PointNet / PointNet++) pour apprendre à détecter, point par point, les erreurs de classification à partir des dalles corrigées.</li>
+        </ol>
+
+        <h3>Résultats</h3>
+        <p>
+            Les résultats montrent un constat nuancé : les métriques structurelles permettent de calculer un score de suspicion au sein de cellules dans une dalle LiDAR, produisant ainsi des cartes d’alerte utiles pour prioriser des contrôles humains.
+        </p>
+
+        <figure>
+            <img src="images/lidar/carte_alerte.png" alt="Exemple d’une carte d’alerte en zone urbaine" class="project-image">
+            <figcaption>Exemple d’une carte d’alerte en zone urbaine.</figcaption>
+        </figure>
+
+        <p>
+            Pour chaque cellule :
+            <ul>
+                <li><strong>Score < 0.1 :</strong> Bonne classification (pas d'alerte)</li>
+                <li><strong>0.4 > Score > 0.1 :</strong> Classification moyenne</li>
+                <li><strong>Score > 0.4 :</strong> Classification mauvaise</li>
+            </ul>
+        </p>
+
+        <p>
+            Les modèles de deep learning fournissent des probabilités de bonne classification interprétables pour chaque classe.
+            Cependant, leur performance reste limitée par plusieurs facteurs :
+            <ul>
+                <li>Le déséquilibre des classes.</li>
+                <li>La diversité limitée des données d’entraînement.</li>
+                <li>Les contraintes matérielles (mémoire, calcul).</li>
+            </ul>
+        </p>
+
+        <p>
+            En pratique :
+            <ul>
+                <li>Les classes majoritaires sont bien reconnues.</li>
+                <li>Les classes rares au sein d’une dalle sont encore mal détectées.</li>
+            </ul>
+        </p>
+
+        <p>
+            Un exemple est donné ci-dessous avec les prédictions du modèle sur la précision de 3 classes :
+            <ul>
+                <li><strong>“sol”</strong></li>
+                <li><strong>“bâti”</strong></li>
+                <li><strong>“non-classé”</strong></li>
+            </ul>
+            dans 4 zones différentes.
+        </p>
+
+        <p>
+            Les prédictions du modèle correspondent à des valeurs entre 0 et 1, que l’on peut traduire par :
+            <blockquote>
+                <em>“la probabilité moyenne qu’un point soit correctement classé pour chaque classe.”</em>
+            </blockquote>
+            C’est une forme de niveau de confiance que l’on peut avoir dans la classification.
+        </p>
+
+        <figure>
+            <img src="images/lidar/tableau.png" alt="Tableau résumant les prédictions du modèle d’apprentissage profond concernant la précision de 3 classes dans 4 zones différentes" style="width: 80%; height: auto; margin: 20px auto;">
+            <figcaption>Tableau résumant les prédictions du modèle d’apprentissage profond concernant la précision de 3 classes dans 4 zones différentes.</figcaption>
+        </figure>
+
+        <p>
+            En conclusion, une approche combinée, mêlant métriques structurelles pour la détection rapide et l’apprentissage supervisé pour affiner les probabilités, apparaît la plus prometteuse.
+            Pour passer à l’échelle, il faudra prioritairement enrichir les références manuelles (annotations ciblées), diversifier les environnements d’entraînement et intégrer des pipelines reproductibles pour industrialiser le contrôle qualité LiDAR HD.
+        </p>
+
+        <div class="project-skills">
+            <h3>Outils / données</h3>
+            <ul>
+                <li>Python</li>
+                <li>Tensorflow / PyTorch</li>
+                <li>PointNet++</li>
+                <li>Terrasolid</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="project" id="project-segmentation">
+        <h2>Segmentation sémantique de l’occupation du sol par Deep Learning</h2>
+
+        <p class="project-context">
+            Projet de recherche portant sur la mise en œuvre d’un modèle de segmentation sémantique automatisée basé sur l’architecture <strong>DeepLabv3+</strong>, appliqué à des images satellites Sentinel-2 pour la cartographie de l’occupation du sol.
+        </p>
+
+        <h3>Objectifs du projet</h3>
+        <p>
+            L’objectif principal de ce travail est de développer un modèle de segmentation sémantique capable de prédire des cartes d’occupation du sol à partir d’images Sentinel-2, en s’appuyant sur des données labellisées issues du jeu de données <strong>LandCoverNet</strong>.
+        </p>
+
+        <p>
+            En parallèle, le projet s’intéresse aux défis liés à la <strong>labellisation manuelle</strong> de ces données, en évaluant le temps nécessaire, la complexité et les limites de cette approche. L’objectif final est de comparer la labellisation manuelle à l’apprentissage profond, et d’évaluer dans quelle mesure un modèle de deep learning peut améliorer la classification de l’occupation du sol.
+        </p>
+
+        <p>
+            Une comparaison avec un modèle <strong>U-Net</strong>, développé par un autre groupe de travail, permet également de situer les performances de DeepLabv3+.
+        </p>
+
+        <h3>Données utilisées</h3>
+        <ul>
+            <li>Images multispectrales Sentinel-2</li>
+            <li>Données labellisées LandCoverNet</li>
+            <li>Annotations manuelles pour l’évaluation du processus de labellisation</li>
+        </ul>
+
+        <h3>Annotation et labellisation</h3>
+        <p>
+            Une partie du projet est consacrée à la labellisation manuelle des données, réalisée à l’aide de l’outil CVAT. Cette étape permet d’évaluer la charge de travail, les difficultés rencontrées et la subjectivité associée à la production de vérités terrain.
+        </p>
+
+        <figure>
+            <img src="images/segmentation/cvat_classes2.png" alt="Annotation manuelle des images Sentinel-2 avec CVAT" style="width: 60%; height: auto; margin: 20px auto;">
+            <figcaption>Annotation manuelle des images Sentinel-2 avec CVAT.</figcaption>
+        </figure>
+
+        <h3>Méthodologie</h3>
+        <ol>
+            <li>Prétraitement des images Sentinel-2</li>
+            <li>Analyse des données LandCoverNet</li>
+            <li>Labellisation manuelle via CVAT</li>
+            <li>Entraînement du modèle DeepLabv3+</li>
+            <li>Évaluation des performances de segmentation</li>
+            <li>Comparaison avec la labellisation manuelle et le modèle U-Net</li>
+        </ol>
+
+        <h3>Résultats de segmentation</h3>
+        <p>
+            Les cartes de segmentation produites par DeepLabv3+ montrent une meilleure cohérence spatiale et une capacité accrue à généraliser par rapport aux annotations manuelles, notamment sur les zones complexes.
+        </p>
+
+        <figure>
+            <img src="images/segmentation/predictions.png" alt="Image Sentinel-2 et carte d’occupation du sol de référence" style="width: 70%; height: auto; margin: 20px auto;">
+            <figcaption>Comparaison entre une image Sentinel-2, la carte d’occupation du sol de référence, et la carte d'occupation produite par DeepLabV3+.</figcaption>
+        </figure>
+
+        <h3>Comparaison des méthodes</h3>
+        <p>
+            Une comparaison qualitative et quantitative est réalisée entre la labellisation manuelle, le modèle DeepLabv3+ et un modèle U-Net. Les résultats mettent en évidence les avantages du deep learning en termes de rapidité, de reproductibilité et de qualité de segmentation. Ils mettent également en évidence les limites d'un modèle complexe (et plus robuste) comme DeepLabV3+ lorsqu'il manque encore de données d'entraînement en quantité et diversité.
+        </p>
+
+        <figure>
+            <img src="images/segmentation/comparaisons_modeles.png" alt="Comparaison entre labellisation manuelle, DeepLabv3+ et U-Net" style="margin: 20px auto;">
+            <figcaption>Comparaison entre une image Sentinel-2, U-Net et DeepLabv3+.</figcaption>
+        </figure>
+
+        <h3>Conclusion</h3>
+        <p>
+            Ce projet a permis de démontrer l’intérêt du deep learning pour la segmentation sémantique d’images satellitaires, en particulier avec l’architecture DeepLabV3+. Le modèle est capable de produire des cartes d’occupation du sol cohérentes à partir d’images Sentinel-2.
+        </p>
+
+        <p>
+            La comparaison avec la labellisation manuelle met en évidence un compromis clair : si l’annotation humaine reste plus précise, elle est très coûteuse en temps, tandis que la segmentation automatique permet un gain de productivité significatif.
+        </p>
+
+        <p>
+            Ces résultats confirment le potentiel de l’intelligence artificielle pour l’analyse environnementale à grande échelle, tout en soulignant l’importance de la qualité des données et de l’optimisation des paramètres pour améliorer les performances.
+        </p>
+
+        <div class="project-skills">
+            <h3>Outils / données</h3>
+            <ul>
+                <li>Python</li>
+                <li>Deep Learning</li>
+                <li>Segmentation sémantique</li>
+                <li>DeepLabv3+</li>
+                <li>U-Net</li>
+                <li>Sentinel-2</li>
+                <li>LandCoverNet</li>
+                <li>CVAT</li>
+                <li>SIG</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="project" id="project-sig">
+        <h2>Distribution spatiale des odonymes féminins dans la ville de Paris</h2>
+        <p>
+            Ce projet, réalisé en collaboration avec Benjamin Lecordix et Johann Palos, vise à analyser la distribution spatiale des odonymes (noms des rues) féminins à Paris.
+            Commandité par Alexandra Mallah (doctorante au laboratoire Géographie-cités), ce projet s'inscrit dans le cadre d'une thèse sur la représentation des genres dans l'espace urbain.
+        </p>
+
+        <h3>Contexte</h3>
+        <p>
+            Les noms de voie ne sont pas de simples repères géographiques, mais de véritables marqueurs identitaires qui inscrivent dans l’espace quotidien une version autorisée de l’histoire.
+            À Paris, les odonymes féminins restent sous-représentés, reflétant des inégalités de genre dans la mémoire collective.
+        </p>
+
+        <figure>
+            <img src="images/odonymes/image_presentation_panneau.jpg" alt="Plaque de rue Gisèle Halimi" style="width: 60%; height: auto; margin: 20px auto;">
+            <figcaption>Panneau de rue honorant Gisèle Halimi, avocate et femme politique.</figcaption>
+        </figure>
+
+        <h3>Méthode</h3>
+        <p>
+            Nous avons utilisé des données de la ville de Paris pour géoréférencer les odonymes et analyser leur répartition en fonction de trois types de centralités :
+            <ul>
+                <li>Centralité touristique</li>
+                <li>Centralité politique</li>
+                <li>Centralité de fréquentation pédestre</li>
+            </ul>
+        </p>
+        <p>
+            Nous avons créé des zones tampons autour des sites touristiques et politiques, puis analysé la proportion de surface des odonymes féminins dans ces zones.
+        </p>
+
+        <h3>Résultats</h3>
+        <p>
+            Les résultats montrent que les odonymes féminins sont sous-représentés dans les zones centrales et les grandes artères.
+            Malgré une politique de féminisation des odonymes initiée après 2001, les odonymes féminins restent majoritairement situés en périphérie ou dans des espaces secondaires.
+        </p>
+
+        <figure>
+            <img src="images/odonymes/carte_finale_cto.png" alt="Carte des centralités touristiques" style="width: 80%; height: auto; margin: 20px auto;">
+            <figcaption>Carte des centralités touristiques et répartition des odonymes féminins.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/odonymes/carte_finale_cpo.png" alt="Carte des centralités politiques" style="width: 80%; height: auto; margin: 20px auto;">
+            <figcaption>Carte des centralités politiques et répartition des odonymes féminins.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/odonymes/carte_freq_niv.png" alt="Carte de la fréquentation pédestre" style="width: 80%; height: auto; margin: 20px auto;">
+            <figcaption>Carte de la fréquentation pédestre et répartition des odonymes féminins.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/odonymes/tableau_freq.png" alt="Tableau fréquentation pédestre" style="width: 70%; height: auto; margin: 20px auto;">
+            <figcaption>Tableau des proportions de rues (en longueur) seln le genre.</figcaption>
+        </figure>
+
+        <h3>Conclusion</h3>
+        <p>
+            Cette étude met en évidence des disparités significatives dans la représentation des figures féminines dans l'espace public parisien.
+            Malgré une augmentation du nombre d'odonymes féminins après la loi de 2001, leur localisation et leur typologie montrent que des inégalités persistent.
+        </p>
+
+        <div class="project-skills">
+            <h3>Compétences mobilisées</h3>
+            <ul>
+                <li>Traitement des données</li>
+                <li>Analyse spatiale</li>
+                <li>Géoréférencement</li>
+                <li>QGIS</li>
+                <li>Python</li>
+                <li>Distance de Levenshtein</li>
+                <li>Zones tampons</li>
+                <li>Analyse statistique</li>
+                <li>OpenData Paris</li>
+                <li>Visualisation cartographique</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="project" id="project-ndwi">
+        <h2>Détection de l’eau par NDWI</h2>
+
+        <p class="project-context">
+            Mini-projet visant à détecter automatiquement les surfaces en eau à partir d’images Sentinel-2 en utilisant l’indice NDWI, sans recours au Deep Learning.
+        </p>
+
+        <h3>Contexte & objectif</h3>
+        <p>
+            L’objectif de ce projet était de développer une méthode simple, robuste et interprétable pour la détection de l’eau à partir d’images satellites, en s’appuyant sur des indices spectraux classiques et une analyse spatiale des erreurs.
+        </p>
+
+        <h3>Données</h3>
+        <ul>
+            <li>Sentinel-2 (bandes verte et infrarouge)</li>
+            <li>Données de référence JRC Global Surface Water</li>
+        </ul>
+
+        <h3>Méthodologie</h3>
+        <ol>
+            <li>Calcul du NDWI</li>
+            <li>Seuillage pour la classification eau / non-eau</li>
+            <li>Comparaison avec les données de référence JRC</li>
+            <li>Analyse spatiale des erreurs de classification</li>
+        </ol>
+
+        <h3>Résultats</h3>
+        <p>
+            Les résultats montrent une bonne détection globale des surfaces en eau, avec des erreurs localisées principalement en zones urbaines et ombragées.
+        </p>
+
+        <figure>
+            <img src="images/carte_finale.png" alt="Carte des erreurs de détection d'eau" class="project-image">
+            <figcaption>Carte des erreurs de détection d'eau.</figcaption>
+        </figure>
+
+        <div class="project-skills">
+            <span>Sentinel-2</span>
+            <span>NDWI</span>
+            <span>Python</span>
+            <span>Analyse spatiale</span>
+            <span>SIG</span>
+        </div>
+    </section>
+</main>
+
+ <footer>
+            <p>&copy; 2026 Eliot Barrière. Tous droits réservés.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
