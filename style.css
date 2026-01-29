@@ -24,7 +24,7 @@
    GLOBAL
 ========================= */
 
-body {
+/*body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text);
@@ -32,6 +32,21 @@ body {
     padding: 20px;
     min-height: 100vh;
 }
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('images/Carte-de-Cassini-Paris.png');
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'écran */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-attachment: fixed; /* Fixe l'image pour qu'elle ne défile pas avec le contenu */
+    min-height: 100vh; /* Assure que le fond couvre toute la hauteur de la fenêtre */
+    padding: 20px;
+}
+
 
 /* =========================
    CONTAINER
